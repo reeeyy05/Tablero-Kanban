@@ -1,6 +1,221 @@
-
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+:root {
+    --color-fondo-general: #7474ff;
+    --color-columna-fondo: #f8f8ff;
+    --color-tarjeta-fondo: #ffffff;
+    --color-texto-normal: #172b4d;
+    --color-texto-secundario: #5e6c84;
+    --color-primario: #0079bf;
+    --color-secundario: #b6bccf;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-fondo-general);
+    color: var(--color-texto-normal);
+    line-height: 1.5;
+    padding: 24px 16px;
+}
+
+#tablero {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.columna {
+    background-color: var(--color-columna-fondo);
+    border-radius: 4px;
+    width: 350px;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d3d3e5;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.cabecera-columna {
+    padding: 8px 12px;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #d3d3e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-columna {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    padding: 0 8px;
+    color: var(--color-texto-normal);
+    text-align: center;
+}
+
+.contenedor-tarjetas {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 4px 0;
+}
+
+.tarjeta {
+    background-color: var(--color-tarjeta-fondo);
+    border: 1px solid #e2e4e6;
+    border-radius: 3px;
+    padding: 8px 12px;
+    position: relative;
+    cursor: grab;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.tarjeta:hover {
+    background-color: #fafbfd;
+    transform: translateY(-1px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.texto-tarjeta {
+    margin-right: 20px;
+    transition: margin-right 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.tarjeta:hover .texto-tarjeta {
+    margin: 36px;
+}
+
+.boton-eliminar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: transparent;
+    color: var(--color-secundario);
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease, background-color 0.15s ease;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta:hover .boton-eliminar {
+    opacity: 1;
+}
+
+.boton-eliminar:hover {
+    background-color: #d7d8dd;
+    color: #4c566a;
+}
+
+.boton-agregar {
+    width: 120px;
+    background-color: transparent;
+    color: var(--color-primario);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin: 8px 8px 12px 8px;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.boton-agregar:hover {
+    background-color: rgba(0, 121, 191, 0.08);
+}
+
+.formulario-anadir {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formulario-anadir.oculto {
+    display: none;
+}
+
+form label {
+    font-size: 14px;
+    color: var(--color-secundario);
+    font-weight: 500;
+}
+
+form input {
+    padding: 8px 12px;
+    border: 1px solid #d3d3e5;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: white;
+    width: 100%;
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 2px rgba(0, 121, 191, 0.15);
+}
+
+.acciones-formulario {
+    display: flex;
+    gap: 8px;
+}
+
+.boton-confirmar,
+.boton-cancelar {
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.boton-confirmar {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+.boton-confirmar:hover {
+    background-color: var(--color-primario);
+}
+
+.boton-cancelar {
+    background-color: #e9ecef;
+    color: var(--color-texto-secundario);
+}
+
+.boton-cancelar:hover {
+    background-color: #dde0e5;
+}
+
+.tarjeta.dragging {
+    opacity: 0.7;
+    transform: scale(0.99);
+}
+
+.contenedor-tarjetas.drag-over {
+    background-color: #e0e6f7;
+    border: 1px dashed var(--color-primario);
+    border-radius: 3px;
+}

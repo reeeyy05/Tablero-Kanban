@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang='es'>
+
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -9,6 +10,64 @@
 </head>
 
 <body>
-    <h1>...</h1>
+    <main id="tablero">
+        <!-- COLUMNA: POR HACER -->
+        <section class="columna" id="por-hacer">
+            <header class="cabecera-columna">
+                <h2 class="titulo-columna">Por Hacer</h2>
+            </header>
+            
+            <div class="contenedor-tarjetas" id="contenedor-por-hacer"></div>
+            <button class="boton-agregar" id="btn-por-hacer">Añadir tarjeta</button>
+            <!-- Formulario oculto para añadir tarjetas -->
+            <form id="formulario-por-hacer" class="formulario-anadir oculto">
+                <label for="input-por-hacer">Texto de la tarjeta</label>
+                <input type="text" id="input-por-hacer" placeholder="Escribe una tarea" required />
+                <div class="acciones-formulario">
+                    <button type="submit" class="boton-confirmar">Añadir tarjeta</button>
+                    <button type="button" id="cancelar-por-hacer" class="boton-cancelar">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- COLUMNA: EN PROGRESO -->
+        <section class="columna" id="en-progreso">
+            <header class="cabecera-columna">
+                <h2 class="titulo-columna">En progreso</h2>
+            </header>
+
+            <div class="contenedor-tarjetas" id="contenedor-en-progreso"></div>
+            <button class="boton-agregar" id="btn-en-progreso">Añadir tarjeta</button>
+            <!-- Formulario oculto para añadir tarjetas -->
+            <form id="formulario-en-progreso" class="formulario-anadir oculto">
+                <label for="input-en-progreso">Texto de la tarjeta</label>
+                <input type="text" id="input-en-progreso" placeholder="Escribe una tarea" required />
+                <div class="acciones-formulario">
+                    <button type="submit" class="boton-confirmar">Añadir tarjeta</button>
+                    <button type="button" id="cancelar-en-progreso" class="boton-cancelar">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- COLUMNA: HECHO -->
+        <section class="columna" id="hecho">
+            <header class="cabecera-columna">
+                <h2 class="titulo-columna">Hecho</h2>
+            </header>
+
+            <div class="contenedor-tarjetas" id="contenedor-hecho"></div>
+            <button class="boton-agregar" id="btn-hecho">Añadir tarjeta</button>
+            <!-- Formulario oculto para añadir tarjetas -->
+            <form id="formulario-hecho" class="formulario-anadir oculto">
+                <label for="input-hecho">Texto de la tarjeta</label>
+                <input type="text" id="input-hecho" placeholder="Escribe una tarea" required />
+                <div class="acciones-formulario">
+                    <button type="submit" class="boton-confirmar">Añadir tarjeta</button>
+                    <button type="button" id="cancelar-hecho" class="boton-cancelar">Cancelar</button>
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
+
 </html>
