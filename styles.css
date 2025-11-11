@@ -6,8 +6,8 @@
 
 :root {
     --color-fondo-general: #7474ff;
-    --color-columna-fondo: #f8f8ff;
-    --color-tarjeta-fondo: #ffffff;
+    --color-columna-fondo: #ffffff;
+    --color-tarjeta-fondo: #a2a2ff;
     --color-texto-normal: #172b4d;
     --color-texto-secundario: #5e6c84;
     --color-primario: #0079bf;
@@ -43,6 +43,7 @@ body {
 }
 
 .cabecera-columna {
+    background-color: #b9b9ff;
     padding: 8px 12px;
     border-radius: 4px 4px 0 0;
     border: 1px solid #d3d3e5;
