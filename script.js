@@ -27,8 +27,7 @@ function inicializar(idBoton, idForm, idInput, idCancelar, idContenedor) {
     // Confirmar: crea una tarjeta y la inserta en el contenedor
     formulario.addEventListener("submit", (evento) => {
         evento.preventDefault();
-        const texto = input.value.trim();
-        if (!texto) return;
+        const texto = input.value;
 
         // Generemos IDs unicos para la tarjeta y su boton de eliminar
         const idTarjeta = `tarjeta-${contadorTarjetas}`;

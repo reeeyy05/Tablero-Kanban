@@ -43,7 +43,6 @@ body {
 }
 
 .cabecera-columna {
-    
     padding: 8px 12px;
     border-radius: 4px 4px 0 0;
     border: 1px solid #d3d3e5;
@@ -71,6 +70,7 @@ body {
 }
 
 .tarjeta {
+    min-height: 40px;
     width: 300px;
     background-color: var(--color-tarjeta-fondo);
     border: 1px solid #e2e4e6;
@@ -80,20 +80,20 @@ body {
     cursor: grab;
     font-size: 14px;
     line-height: 1.4;
-    word-wrap: break-word;
-    transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-.tarjeta:hover {
-    background-color: var(--color-tarjeta-fondo);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.tarjeta .texto-tarjeta{
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.5,0.2,0.1,1);
+}
+.tarjeta:hover .texto-tarjeta {
+    transform: translateX(-8px);
 }
 
 .boton-eliminar {
     position: absolute;
     top: 8px;
     right: 8px;
-    background-color: transparent;
     color: var(--color-secundario);
     font-weight: bold;
     font-size: 16px;
@@ -103,7 +103,6 @@ body {
     transition: opacity 0.2s ease, background-color 0.15s ease;
     width: 20px;
     height: 20px;
-    border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,11 +110,6 @@ body {
 
 .tarjeta:hover .boton-eliminar {
     opacity: 1;
-}
-
-.boton-eliminar:hover {
-    background-color: #d7d8dd;
-    color: #4c566a;
 }
 
 .boton-agregar {
